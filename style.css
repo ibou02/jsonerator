@@ -2,7 +2,6 @@ body {
 font-family: Source Sans Pro;
 }
 
-
 ul {
     float: left;
     width: 100%;
@@ -12,33 +11,35 @@ ul {
 }
 
 
-a {
+a{
     float: left;
     width: 6em;
     text-decoration: none;
     padding: 0.2em 0.6em;
     border-right: 1px solid white;
-	}
+	
+}
 
 
 li {
     display: inline;
 }
 
-
 #bl {
-background-color:blue;
+background-color:#5a5a5a;
 color: yellow;
 }
-
 
 #or {
-background-color:#ff6900;
+background-color:#5a5a5a;
 color: yellow;
 }
-
 
 #gr {
 background-color : #5a5a5a;
 color: yellow;
 }
+
+#bl:hover ,#or:hover , #gr:hover   {
+ background-color:#ff6900;
+ }
