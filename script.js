@@ -4,9 +4,9 @@
   */
 
   
-angular.module("watch", [])
+var mymodule = angular.module("watch", []);
 
-.controller("ctrl", function($scope) {
+mymodule.controller("ctrl", function($scope) {
     $scope.person_ld = {
             "@context": {
             "schema": "http://schema.org/"
@@ -19,6 +19,7 @@ angular.module("watch", [])
 	
     }
 
+	 
 
     $scope.person = {};
    
@@ -42,7 +43,37 @@ angular.module("watch", [])
 })
 
 
-.controller("marc", function($scope) {
+mymodule.controller("main",function($scope) {
+    $scope.jsonerator = true;
+    $scope.jsonerator2 = true;
+	$scope.jsonerator3 = true;
+	
+	
+    $scope.person = function() {
+        $scope.jsonerator = true;
+        $scope.jsonerator2 = false;
+		$scope.jsonerator3 = false;
+		 }
+	
+	
+	 $scope.product = function() {
+        $scope.jsonerator = false;
+        $scope.jsonerator2 = true;
+		$scope.jsonerator3 = false;
+		}
+	
+	
+	 $scope.place = function() {
+        $scope.jsonerator = false;
+        $scope.jsonerator2 = false;
+		$scope.jsonerator3 = true;
+		   }
+	
+	
+})
+
+
+mymodule.controller("ctrl2", function($scope) {
     $scope.product_ld = {
   "@context": {
     "schema": "http://schema.org/"
@@ -67,7 +98,7 @@ angular.module("watch", [])
             if ($scope.product.hasOwnProperty(key)) {
                 if(!$scope.product[key].length){
                 
-
+                  
      				delete $scope.product_ld["@graph"][0]["schema:" + key];
 				    delete $scope.product_ld["@graph"][0]['schema:manufacturer'][key];
 				
@@ -93,8 +124,8 @@ angular.module("watch", [])
 				
 				
 
-				}
-            }
+			}
+               }
         }
     
 
@@ -105,7 +136,7 @@ angular.module("watch", [])
 })
 
 
-.controller("reely", function($scope) {
+mymodule.controller("ctrl3", function($scope) {
     $scope.place_ld = {
       "@context": {
          "schema": "http://schema.org/"
@@ -135,8 +166,8 @@ angular.module("watch", [])
                    
 				   delete $scope.place_ld["@graph"][0]["schema:" + key];
 				   delete $scope.place_ld["@graph"] [0]['schema:address'][key];
-                  
 				   
+				  
 				   } 
 				
 				else if ($scope.place[key]== $scope.place.name){
@@ -165,8 +196,6 @@ angular.module("watch", [])
 				
 				else if ($scope.place[key]== $scope.place.image){
 				$scope.place_ld["@graph"][0][ "schema:" + key] = $scope.place[key];}
-				
-				
 				
 
             }
