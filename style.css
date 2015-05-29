@@ -1,3 +1,7 @@
+body {
+font-family: Source Sans Pro;
+}
+
 
 ul {
     float: left;
@@ -12,19 +16,29 @@ a {
     float: left;
     width: 6em;
     text-decoration: none;
-    color: white;
-    background-color: purple;
     padding: 0.2em 0.6em;
     border-right: 1px solid white;
-}
-
-
-a:hover {
-    background-color: fuchsia;
-}
+	}
 
 
 li {
     display: inline;
 }
 
+
+#bl {
+background-color:blue;
+color: yellow;
+}
+
+
+#or {
+background-color:#ff6900;
+color: yellow;
+}
+
+
+#gr {
+background-color : #5a5a5a;
+color: yellow;
+}
