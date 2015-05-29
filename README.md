@@ -1,1 +1,1 @@
-my firstangular project
+dynamic json generator made with angularjs
