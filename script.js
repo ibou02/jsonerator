@@ -3,11 +3,12 @@
   * We believe in an open Internet of Things
   */
 
-  
+  'use strict';
 var mymodule = angular.module("watch", []);
 
-mymodule.controller("ctrl", function($scope) {
-    $scope.person_ld = {
+mymodule.controller("Person_Ctrl", function($scope) {
+    $scope.person_ld =
+	{
             "@context": {
             "schema": "http://schema.org/"
 			},
@@ -28,10 +29,10 @@ mymodule.controller("ctrl", function($scope) {
                 if(!$scope.person[key].length){
                    delete $scope.person_ld["@graph"][0]["schema:" + key];
                 } 
-				
-				  else {
-                   $scope.person_ld["@graph"][0]["schema:" + key] = $scope.person[key];
-                }
+			
+			else {
+                 $scope.person_ld["@graph"][0]["schema:" + key] = $scope.person[key];
+				}
             }
         }
     }
@@ -43,16 +44,20 @@ mymodule.controller("ctrl", function($scope) {
 })
 
 
-mymodule.controller("main",function($scope) {
+mymodule.controller("control",function($scope) {
     $scope.jsonerator = true;
     $scope.jsonerator2 = false;
 	$scope.jsonerator3 = false;
+	
 	
 	
     $scope.person = function() {
         $scope.jsonerator = true;
         $scope.jsonerator2 = false;
 		$scope.jsonerator3 = false;
+		
+		
+  
 		 }
 	
 	
@@ -60,6 +65,10 @@ mymodule.controller("main",function($scope) {
         $scope.jsonerator = false;
         $scope.jsonerator2 = true;
 		$scope.jsonerator3 = false;
+		
+		
+        
+		
 		}
 	
 	
@@ -67,267 +76,269 @@ mymodule.controller("main",function($scope) {
         $scope.jsonerator = false;
         $scope.jsonerator2 = false;
 		$scope.jsonerator3 = true;
+		
+		
 		   }
 	
 	 $scope.nationality= 'World';
   
   $scope.countries = [ 
-    {nationality: 'Afghanistan', country_code: 'AF'},
-    {nationality: 'Åland Islands', country_code: 'AX'},
-    {nationality: 'Albania', country_code: 'AL'},
-    {nationality: 'Algeria', country_code: 'DZ'},
-    {nationality: 'American Samoa', country_code: 'AS'},
-    {nationality: 'Andorra', country_code: 'AD'},
-    {nationality: 'Angola', country_code: 'AO'},
-    {nationality: 'Anguilla', country_code: 'AI'},
-    {nationality: 'Antarctica', country_code: 'AQ'},
-    {nationality: 'Antigua and Barbuda', country_code: 'AG'},
-    {nationality: 'Argentina', country_code: 'AR'},
-    {nationality: 'Armenia', country_code: 'AM'},
-    {nationality: 'Aruba', country_code: 'AW'},
-    {nationality: 'Australia', country_code: 'AU'},
-    {nationality: 'Austria', country_code: 'AT'},
-    {nationality: 'Azerbaijan', country_code: 'AZ'},
-    {nationality: 'Bahamas', country_code: 'BS'},
-    {nationality: 'Bahrain', country_code: 'BH'},
-    {nationality: 'Bangladesh', country_code: 'BD'},
-    {nationality: 'Barbados', country_code: 'BB'},
-    {nationality: 'Belarus', country_code: 'BY'},
-    {nationality: 'Belgium', country_code: 'BE'},
-    {nationality: 'Belize', country_code: 'BZ'},
-    {nationality: 'Benin', country_code: 'BJ'},
-    {nationality: 'Bermuda', country_code: 'BM'},
-    {nationality: 'Bhutan', country_code: 'BT'},
-    {nationality: 'Bolivia', country_code: 'BO'},
-    {nationality: 'Bosnia and Herzegovina', country_code: 'BA'},
-    {nationality: 'Botswana', country_code: 'BW'},
-    {nationality: 'Bouvet Island', country_code: 'BV'},
-    {nationality: 'Brazil', country_code: 'BR'},
-    {nationality: 'British Indian Ocean Territory', country_code: 'IO'},
-    {nationality: 'Brunei Darussalam', country_code: 'BN'},
-    {nationality: 'Bulgaria', country_code: 'BG'},
-    {nationality: 'Burkina Faso', country_code: 'BF'},
-    {nationality: 'Burundi', country_code: 'BI'},
-    {nationality: 'Cambodia', country_code: 'KH'},
-    {nationality: 'Cameroon', country_code: 'CM'},
-    {nationality: 'Canada', country_code: 'CA'},
-    {nationality: 'Cape Verde', country_code: 'CV'},
-    {nationality: 'Cayman Islands', country_code: 'KY'},
-    {nationality: 'Central African Republic', country_code: 'CF'},
-    {nationality: 'Chad', country_code: 'TD'},
-    {nationality: 'Chile', country_code: 'CL'},
-    {nationality: 'China', country_code: 'CN'},
-    {nationality: 'Christmas Island', country_code: 'CX'},
-    {nationality: 'Cocos (Keeling) Islands', country_code: 'CC'},
-    {nationality: 'Colombia', country_code: 'CO'},
-    {nationality: 'Comoros', country_code: 'KM'},
-    {nationality: 'Congo', country_code: 'CG'},
-    {nationality: 'Congo, The Democratic Republic of the', country_code: 'CD'},
-    {nationality: 'Cook Islands', country_code: 'CK'},
-    {nationality: 'Costa Rica', country_code: 'CR'},
-    {nationality: 'Cote D\'Ivoire', country_code: 'CI'},
-    {nationality: 'Croatia', country_code: 'HR'},
-    {nationality: 'Cuba', country_code: 'CU'},
-    {nationality: 'Cyprus', country_code: 'CY'},
-    {nationality: 'Czech Republic', country_code: 'CZ'},
-    {nationality: 'Denmark', country_code: 'DK'},
-    {nationality: 'Djibouti', country_code: 'DJ'},
-    {nationality: 'Dominica', country_code: 'DM'},
-    {nationality: 'Dominican Republic', country_code: 'DO'},
-    {nationality: 'Ecuador', country_code: 'EC'},
-    {nationality: 'Egypt', country_code: 'EG'},
-    {nationality: 'El Salvador', country_code: 'SV'},
-    {nationality: 'Equatorial Guinea', country_code: 'GQ'},
-    {nationality: 'Eritrea', country_code: 'ER'},
-    {nationality: 'Estonia', country_code: 'EE'},
-    {nationality: 'Ethiopia', country_code: 'ET'},
-    {nationality: 'Falkland Islands (Malvinas)', country_code: 'FK'},
-    {nationality: 'Faroe Islands', country_code: 'FO'},
-    {nationality: 'Fiji', country_code: 'FJ'},
-    {nationality: 'Finland', country_code: 'FI'},
-    {nationality: 'France', country_code: 'FR'},
-    {nationality: 'French Guiana', country_code: 'GF'},
-    {nationality: 'French Polynesia', country_code: 'PF'},
-    {nationality: 'French Southern Territories', country_code: 'TF'},
-    {nationality: 'Gabon', country_code: 'GA'},
-    {nationality: 'Gambia', country_code: 'GM'},
-    {nationality: 'Georgia', country_code: 'GE'},
-    {nationality: 'Germany', country_code: 'DE'},
-    {nationality: 'Ghana', country_code: 'GH'},
-    {nationality: 'Gibraltar', country_code: 'GI'},
-    {nationality: 'Greece', country_code: 'GR'},
-    {nationality: 'Greenland', country_code: 'GL'},
-    {nationality: 'Grenada', country_code: 'GD'},
-    {nationality: 'Guadeloupe', country_code: 'GP'},
-    {nationality: 'Guam', country_code: 'GU'},
-    {nationality: 'Guatemala', country_code: 'GT'},
-    {nationality: 'Guernsey', country_code: 'GG'},
-    {nationality: 'Guinea', country_code: 'GN'},
-    {nationality: 'Guinea-Bissau', country_code: 'GW'},
-    {nationality: 'Guyana', country_code: 'GY'},
-    {nationality: 'Haiti', country_code: 'HT'},
-    {nationality: 'Heard Island and Mcdonald Islands', country_code: 'HM'},
-    {nationality: 'Holy See (Vatican City State)', country_code: 'VA'},
-    {nationality: 'Honduras', country_code: 'HN'},
-    {nationality: 'Hong Kong', country_code: 'HK'},
-    {nationality: 'Hungary', country_code: 'HU'},
-    {nationality: 'Iceland', country_code: 'IS'},
-    {nationality: 'India', country_code: 'IN'},
-    {nationality: 'Indonesia', country_code: 'ID'},
-    {nationality: 'Iran, Islamic Republic Of', country_code: 'IR'},
-    {nationality: 'Iraq', country_code: 'IQ'},
-    {nationality: 'Ireland', country_code: 'IE'},
-    {nationality: 'Isle of Man', country_code: 'IM'},
-    {nationality: 'Israel', country_code: 'IL'},
-    {nationality: 'Italy', country_code: 'IT'},
-    {nationality: 'Jamaica', country_code: 'JM'},
-    {nationality: 'Japan', country_code: 'JP'},
-    {nationality: 'Jersey', country_code: 'JE'},
-    {nationality: 'Jordan', country_code: 'JO'},
-    {nationality: 'Kazakhstan', country_code: 'KZ'},
-    {nationality: 'Kenya', country_code: 'KE'},
-    {nationality: 'Kiribati', country_code: 'KI'},
-    {nationality: 'Korea, Democratic People\'s Republic of', country_code: 'KP'},
-    {nationality: 'Korea, Republic of', country_code: 'KR'},
-    {nationality: 'Kuwait', country_code: 'KW'},
-    {nationality: 'Kyrgyzstan', country_code: 'KG'},
-    {nationality: 'Lao People\'s Democratic Republic', country_code: 'LA'},
-    {nationality: 'Latvia', country_code: 'LV'},
-    {nationality: 'Lebanon', country_code: 'LB'},
-    {nationality: 'Lesotho', country_code: 'LS'},
-    {nationality: 'Liberia', country_code: 'LR'},
-    {nationality: 'Libyan Arab Jamahiriya', country_code: 'LY'},
-    {nationality: 'Liechtenstein', country_code: 'LI'},
-    {nationality: 'Lithuania', country_code: 'LT'},
-    {nationality: 'Luxembourg', country_code: 'LU'},
-    {nationality: 'Macao', country_code: 'MO'},
-    {nationality: 'Macedonia, The Former Yugoslav Republic of', country_code: 'MK'},
-    {nationality: 'Madagascar', country_code: 'MG'},
-    {nationality: 'Malawi', country_code: 'MW'},
-    {nationality: 'Malaysia', country_code: 'MY'},
-    {nationality: 'Maldives', country_code: 'MV'},
-    {nationality: 'Mali', country_code: 'ML'},
-    {nationality: 'Malta', country_code: 'MT'},
-    {nationality: 'Marshall Islands', country_code: 'MH'},
-    {nationality: 'Martinique', country_code: 'MQ'},
-    {nationality: 'Mauritania', country_code: 'MR'},
-    {nationality: 'Mauritius', country_code: 'MU'},
-    {nationality: 'Mayotte', country_code: 'YT'},
-    {nationality: 'Mexico', country_code: 'MX'},
-    {nationality: 'Micronesia, Federated States of', country_code: 'FM'},
-    {nationality: 'Moldova, Republic of', country_code: 'MD'},
-    {nationality: 'Monaco', country_code: 'MC'},
-    {nationality: 'Mongolia', country_code: 'MN'},
-    {nationality: 'Montserrat', country_code: 'MS'},
-    {nationality: 'Morocco', country_code: 'MA'},
-    {nationality: 'Mozambique', country_code: 'MZ'},
-    {nationality: 'Myanmar', country_code: 'MM'},
-    {nationality: 'Namibia', country_code: 'NA'},
-    {nationality: 'Nauru', country_code: 'NR'},
-    {nationality: 'Nepal', country_code: 'NP'},
-    {nationality: 'Netherlands', country_code: 'NL'},
-    {nationality: 'Netherlands Antilles', country_code: 'AN'},
-    {nationality: 'New Caledonia', country_code: 'NC'},
-    {nationality: 'New Zealand', country_code: 'NZ'},
-    {nationality: 'Nicaragua', country_code: 'NI'},
-    {nationality: 'Niger', country_code: 'NE'},
-    {nationality: 'Nigeria', country_code: 'NG'},
-    {nationality: 'Niue', country_code: 'NU'},
-    {nationality: 'Norfolk Island', country_code: 'NF'},
-    {nationality: 'Northern Mariana Islands', country_code: 'MP'},
-    {nationality: 'Norway', country_code: 'NO'},
-    {nationality: 'Oman', country_code: 'OM'},
-    {nationality: 'Pakistan', country_code: 'PK'},
-    {nationality: 'Palau', country_code: 'PW'},
-    {nationality: 'Palestinian Territory, Occupied', country_code: 'PS'},
-    {nationality: 'Panama', country_code: 'PA'},
-    {nationality: 'Papua New Guinea', country_code: 'PG'},
-    {nationality: 'Paraguay', country_code: 'PY'},
-    {nationality: 'Peru', country_code: 'PE'},
-    {nationality: 'Philippines', country_code: 'PH'},
-    {nationality: 'Pitcairn', country_code: 'PN'},
-    {nationality: 'Poland', country_code: 'PL'},
-    {nationality: 'Portugal', country_code: 'PT'},
-    {nationality: 'Puerto Rico', country_code: 'PR'},
-    {nationality: 'Qatar', country_code: 'QA'},
-    {nationality: 'Reunion', country_code: 'RE'},
-    {nationality: 'Romania', country_code: 'RO'},
-    {nationality: 'Russian Federation', country_code: 'RU'},
-    {nationality: 'Rwanda', country_code: 'RW'},
-    {nationality: 'Saint Helena', country_code: 'SH'},
-    {nationality: 'Saint Kitts and Nevis', country_code: 'KN'},
-    {nationality: 'Saint Lucia', country_code: 'LC'},
-    {nationality: 'Saint Pierre and Miquelon', country_code: 'PM'},
-    {nationality: 'Saint Vincent and the Grenadines', country_code: 'VC'},
-    {nationality: 'Samoa', country_code: 'WS'},
-    {nationality: 'San Marino', country_code: 'SM'},
-    {nationality: 'Sao Tome and Principe', country_code: 'ST'},
-    {nationality: 'Saudi Arabia', country_code: 'SA'},
-    {nationality: 'Senegal', country_code: 'SN'},
-    {nationality: 'Serbia and Montenegro', country_code: 'CS'},
-    {nationality: 'Seychelles', country_code: 'SC'},
-    {nationality: 'Sierra Leone', country_code: 'SL'},
-    {nationality: 'Singapore', country_code: 'SG'},
-    {nationality: 'Slovakia', country_code: 'SK'},
-    {nationality: 'Slovenia', country_code: 'SI'},
-    {nationality: 'Solomon Islands', country_code: 'SB'},
-    {nationality: 'Somalia', country_code: 'SO'},
-    {nationality: 'South Africa', country_code: 'ZA'},
-    {nationality: 'South Georgia and the South Sandwich Islands', country_code: 'GS'},
-    {nationality: 'Spain', country_code: 'ES'},
-    {nationality: 'Sri Lanka', country_code: 'LK'},
-    {nationality: 'Sudan', country_code: 'SD'},
-    {nationality: 'Surinationality', country_code: 'SR'},
-    {nationality: 'Svalbard and Jan Mayen', country_code: 'SJ'},
-    {nationality: 'Swaziland', country_code: 'SZ'},
-    {nationality: 'Sweden', country_code: 'SE'},
-    {nationality: 'Switzerland', country_code: 'CH'},
-    {nationality: 'Syrian Arab Republic', country_code: 'SY'},
-    {nationality: 'Taiwan, Province of China', country_code: 'TW'},
-    {nationality: 'Tajikistan', country_code: 'TJ'},
-    {nationality: 'Tanzania, United Republic of', country_code: 'TZ'},
-    {nationality: 'Thailand', country_code: 'TH'},
-    {nationality: 'Timor-Leste', country_code: 'TL'},
-    {nationality: 'Togo', country_code: 'TG'},
-    {nationality: 'Tokelau', country_code: 'TK'},
-    {nationality: 'Tonga', country_code: 'TO'},
-    {nationality: 'Trinidad and Tobago', country_code: 'TT'},
-    {nationality: 'Tunisia', country_code: 'TN'},
-    {nationality: 'Turkey', country_code: 'TR'},
-    {nationality: 'Turkmenistan', country_code: 'TM'},
-    {nationality: 'Turks and Caicos Islands', country_code: 'TC'},
-    {nationality: 'Tuvalu', country_code: 'TV'},
-    {nationality: 'Uganda', country_code: 'UG'},
-    {nationality: 'Ukraine', country_code: 'UA'},
-    {nationality: 'United Arab Emirates', country_code: 'AE'},
-    {nationality: 'United Kingdom', country_code: 'GB'},
-    {nationality: 'United States', country_code: 'US'},
-    {nationality: 'United States Minor Outlying Islands', country_code: 'UM'},
-    {nationality: 'Uruguay', country_code: 'UY'},
-    {nationality: 'Uzbekistan', country_code: 'UZ'},
-    {nationality: 'Vanuatu', country_code: 'VU'},
-    {nationality: 'Venezuela', country_code: 'VE'},
-    {nationality: 'Vietnam', country_code: 'VN'},
-    {nationality: 'Virgin Islands, British', country_code: 'VG'},
-    {nationality: 'Virgin Islands, U.S.', country_code: 'VI'},
-    {nationality: 'Wallis and Futuna', country_code: 'WF'},
-    {nationality: 'Western Sahara', country_code: 'EH'},
-    {nationality: 'Yemen', country_code: 'YE'},
-    {nationality: 'Zambia', country_code: 'ZM'},
-    {nationality: 'Zimbabwe', country_code: 'ZW'}
+    {nationality: 'Afghanistan', code: 'AF'},
+    {nationality: 'Åland Islands', code: 'AX'},
+    {nationality: 'Albania', code: 'AL'},
+    {nationality: 'Algeria', code: 'DZ'},
+    {nationality: 'American Samoa', code: 'AS'},
+    {nationality: 'Andorra', code: 'AD'},
+    {nationality: 'Angola', code: 'AO'},
+    {nationality: 'Anguilla', code: 'AI'},
+    {nationality: 'Antarctica', code: 'AQ'},
+    {nationality: 'Antigua and Barbuda', code: 'AG'},
+    {nationality: 'Argentina', code: 'AR'},
+    {nationality: 'Armenia', code: 'AM'},
+    {nationality: 'Aruba', code: 'AW'},
+    {nationality: 'Australia', code: 'AU'},
+    {nationality: 'Austria', code: 'AT'},
+    {nationality: 'Azerbaijan', code: 'AZ'},
+    {nationality: 'Bahamas', code: 'BS'},
+    {nationality: 'Bahrain', code: 'BH'},
+    {nationality: 'Bangladesh', code: 'BD'},
+    {nationality: 'Barbados', code: 'BB'},
+    {nationality: 'Belarus', code: 'BY'},
+    {nationality: 'Belgium', code: 'BE'},
+    {nationality: 'Belize', code: 'BZ'},
+    {nationality: 'Benin', code: 'BJ'},
+    {nationality: 'Bermuda', code: 'BM'},
+    {nationality: 'Bhutan', code: 'BT'},
+    {nationality: 'Bolivia', code: 'BO'},
+    {nationality: 'Bosnia and Herzegovina', code: 'BA'},
+    {nationality: 'Botswana', code: 'BW'},
+    {nationality: 'Bouvet Island', code: 'BV'},
+    {nationality: 'Brazil', code: 'BR'},
+    {nationality: 'British Indian Ocean Territory', code: 'IO'},
+    {nationality: 'Brunei Darussalam', code: 'BN'},
+    {nationality: 'Bulgaria', code: 'BG'},
+    {nationality: 'Burkina Faso', code: 'BF'},
+    {nationality: 'Burundi', code: 'BI'},
+    {nationality: 'Cambodia', code: 'KH'},
+    {nationality: 'Cameroon', code: 'CM'},
+    {nationality: 'Canada', code: 'CA'},
+    {nationality: 'Cape Verde', code: 'CV'},
+    {nationality: 'Cayman Islands', code: 'KY'},
+    {nationality: 'Central African Republic', code: 'CF'},
+    {nationality: 'Chad', code: 'TD'},
+    {nationality: 'Chile', code: 'CL'},
+    {nationality: 'China', code: 'CN'},
+    {nationality: 'Christmas Island', code: 'CX'},
+    {nationality: 'Cocos (Keeling) Islands', code: 'CC'},
+    {nationality: 'Colombia', code: 'CO'},
+    {nationality: 'Comoros', code: 'KM'},
+    {nationality: 'Congo', code: 'CG'},
+    {nationality: 'Congo, The Democratic Republic of the', code: 'CD'},
+    {nationality: 'Cook Islands', code: 'CK'},
+    {nationality: 'Costa Rica', code: 'CR'},
+    {nationality: 'Cote D\'Ivoire', code: 'CI'},
+    {nationality: 'Croatia', code: 'HR'},
+    {nationality: 'Cuba', code: 'CU'},
+    {nationality: 'Cyprus', code: 'CY'},
+    {nationality: 'Czech Republic', code: 'CZ'},
+    {nationality: 'Denmark', code: 'DK'},
+    {nationality: 'Djibouti', code: 'DJ'},
+    {nationality: 'Dominica', code: 'DM'},
+    {nationality: 'Dominican Republic', code: 'DO'},
+    {nationality: 'Ecuador', code: 'EC'},
+    {nationality: 'Egypt', code: 'EG'},
+    {nationality: 'El Salvador', code: 'SV'},
+    {nationality: 'Equatorial Guinea', code: 'GQ'},
+    {nationality: 'Eritrea', code: 'ER'},
+    {nationality: 'Estonia', code: 'EE'},
+    {nationality: 'Ethiopia', code: 'ET'},
+    {nationality: 'Falkland Islands (Malvinas)', code: 'FK'},
+    {nationality: 'Faroe Islands', code: 'FO'},
+    {nationality: 'Fiji', code: 'FJ'},
+    {nationality: 'Finland', code: 'FI'},
+    {nationality: 'France', code: 'FR'},
+    {nationality: 'French Guiana', code: 'GF'},
+    {nationality: 'French Polynesia', code: 'PF'},
+    {nationality: 'French Southern Territories', code: 'TF'},
+    {nationality: 'Gabon', code: 'GA'},
+    {nationality: 'Gambia', code: 'GM'},
+    {nationality: 'Georgia', code: 'GE'},
+    {nationality: 'Germany', code: 'DE'},
+    {nationality: 'Ghana', code: 'GH'},
+    {nationality: 'Gibraltar', code: 'GI'},
+    {nationality: 'Greece', code: 'GR'},
+    {nationality: 'Greenland', code: 'GL'},
+    {nationality: 'Grenada', code: 'GD'},
+    {nationality: 'Guadeloupe', code: 'GP'},
+    {nationality: 'Guam', code: 'GU'},
+    {nationality: 'Guatemala', code: 'GT'},
+    {nationality: 'Guernsey', code: 'GG'},
+    {nationality: 'Guinea', code: 'GN'},
+    {nationality: 'Guinea-Bissau', code: 'GW'},
+    {nationality: 'Guyana', code: 'GY'},
+    {nationality: 'Haiti', code: 'HT'},
+    {nationality: 'Heard Island and Mcdonald Islands', code: 'HM'},
+    {nationality: 'Holy See (Vatican City State)', code: 'VA'},
+    {nationality: 'Honduras', code: 'HN'},
+    {nationality: 'Hong Kong', code: 'HK'},
+    {nationality: 'Hungary', code: 'HU'},
+    {nationality: 'Iceland', code: 'IS'},
+    {nationality: 'India', code: 'IN'},
+    {nationality: 'Indonesia', code: 'ID'},
+    {nationality: 'Iran, Islamic Republic Of', code: 'IR'},
+    {nationality: 'Iraq', code: 'IQ'},
+    {nationality: 'Ireland', code: 'IE'},
+    {nationality: 'Isle of Man', code: 'IM'},
+    {nationality: 'Israel', code: 'IL'},
+    {nationality: 'Italy', code: 'IT'},
+    {nationality: 'Jamaica', code: 'JM'},
+    {nationality: 'Japan', code: 'JP'},
+    {nationality: 'Jersey', code: 'JE'},
+    {nationality: 'Jordan', code: 'JO'},
+    {nationality: 'Kazakhstan', code: 'KZ'},
+    {nationality: 'Kenya', code: 'KE'},
+    {nationality: 'Kiribati', code: 'KI'},
+    {nationality: 'Korea, Democratic People\'s Republic of', code: 'KP'},
+    {nationality: 'Korea, Republic of', code: 'KR'},
+    {nationality: 'Kuwait', code: 'KW'},
+    {nationality: 'Kyrgyzstan', code: 'KG'},
+    {nationality: 'Lao People\'s Democratic Republic', code: 'LA'},
+    {nationality: 'Latvia', code: 'LV'},
+    {nationality: 'Lebanon', code: 'LB'},
+    {nationality: 'Lesotho', code: 'LS'},
+    {nationality: 'Liberia', code: 'LR'},
+    {nationality: 'Libyan Arab Jamahiriya', code: 'LY'},
+    {nationality: 'Liechtenstein', code: 'LI'},
+    {nationality: 'Lithuania', code: 'LT'},
+    {nationality: 'Luxembourg', code: 'LU'},
+    {nationality: 'Macao', code: 'MO'},
+    {nationality: 'Macedonia, The Former Yugoslav Republic of', code: 'MK'},
+    {nationality: 'Madagascar', code: 'MG'},
+    {nationality: 'Malawi', code: 'MW'},
+    {nationality: 'Malaysia', code: 'MY'},
+    {nationality: 'Maldives', code: 'MV'},
+    {nationality: 'Mali', code: 'ML'},
+    {nationality: 'Malta', code: 'MT'},
+    {nationality: 'Marshall Islands', code: 'MH'},
+    {nationality: 'Martinique', code: 'MQ'},
+    {nationality: 'Mauritania', code: 'MR'},
+    {nationality: 'Mauritius', code: 'MU'},
+    {nationality: 'Mayotte', code: 'YT'},
+    {nationality: 'Mexico', code: 'MX'},
+    {nationality: 'Micronesia, Federated States of', code: 'FM'},
+    {nationality: 'Moldova, Republic of', code: 'MD'},
+    {nationality: 'Monaco', code: 'MC'},
+    {nationality: 'Mongolia', code: 'MN'},
+    {nationality: 'Montserrat', code: 'MS'},
+    {nationality: 'Morocco', code: 'MA'},
+    {nationality: 'Mozambique', code: 'MZ'},
+    {nationality: 'Myanmar', code: 'MM'},
+    {nationality: 'Namibia', code: 'NA'},
+    {nationality: 'Nauru', code: 'NR'},
+    {nationality: 'Nepal', code: 'NP'},
+    {nationality: 'Netherlands', code: 'NL'},
+    {nationality: 'Netherlands Antilles', code: 'AN'},
+    {nationality: 'New Caledonia', code: 'NC'},
+    {nationality: 'New Zealand', code: 'NZ'},
+    {nationality: 'Nicaragua', code: 'NI'},
+    {nationality: 'Niger', code: 'NE'},
+    {nationality: 'Nigeria', code: 'NG'},
+    {nationality: 'Niue', code: 'NU'},
+    {nationality: 'Norfolk Island', code: 'NF'},
+    {nationality: 'Northern Mariana Islands', code: 'MP'},
+    {nationality: 'Norway', code: 'NO'},
+    {nationality: 'Oman', code: 'OM'},
+    {nationality: 'Pakistan', code: 'PK'},
+    {nationality: 'Palau', code: 'PW'},
+    {nationality: 'Palestinian Territory, Occupied', code: 'PS'},
+    {nationality: 'Panama', code: 'PA'},
+    {nationality: 'Papua New Guinea', code: 'PG'},
+    {nationality: 'Paraguay', code: 'PY'},
+    {nationality: 'Peru', code: 'PE'},
+    {nationality: 'Philippines', code: 'PH'},
+    {nationality: 'Pitcairn', code: 'PN'},
+    {nationality: 'Poland', code: 'PL'},
+    {nationality: 'Portugal', code: 'PT'},
+    {nationality: 'Puerto Rico', code: 'PR'},
+    {nationality: 'Qatar', code: 'QA'},
+    {nationality: 'Reunion', code: 'RE'},
+    {nationality: 'Romania', code: 'RO'},
+    {nationality: 'Russian Federation', code: 'RU'},
+    {nationality: 'Rwanda', code: 'RW'},
+    {nationality: 'Saint Helena', code: 'SH'},
+    {nationality: 'Saint Kitts and Nevis', code: 'KN'},
+    {nationality: 'Saint Lucia', code: 'LC'},
+    {nationality: 'Saint Pierre and Miquelon', code: 'PM'},
+    {nationality: 'Saint Vincent and the Grenadines', code: 'VC'},
+    {nationality: 'Samoa', code: 'WS'},
+    {nationality: 'San Marino', code: 'SM'},
+    {nationality: 'Sao Tome and Principe', code: 'ST'},
+    {nationality: 'Saudi Arabia', code: 'SA'},
+    {nationality: 'Senegal', code: 'SN'},
+    {nationality: 'Serbia and Montenegro', code: 'CS'},
+    {nationality: 'Seychelles', code: 'SC'},
+    {nationality: 'Sierra Leone', code: 'SL'},
+    {nationality: 'Singapore', code: 'SG'},
+    {nationality: 'Slovakia', code: 'SK'},
+    {nationality: 'Slovenia', code: 'SI'},
+    {nationality: 'Solomon Islands', code: 'SB'},
+    {nationality: 'Somalia', code: 'SO'},
+    {nationality: 'South Africa', code: 'ZA'},
+    {nationality: 'South Georgia and the South Sandwich Islands', code: 'GS'},
+    {nationality: 'Spain', code: 'ES'},
+    {nationality: 'Sri Lanka', code: 'LK'},
+    {nationality: 'Sudan', code: 'SD'},
+    {nationality: 'Surinationality', code: 'SR'},
+    {nationality: 'Svalbard and Jan Mayen', code: 'SJ'},
+    {nationality: 'Swaziland', code: 'SZ'},
+    {nationality: 'Sweden', code: 'SE'},
+    {nationality: 'Switzerland', code: 'CH'},
+    {nationality: 'Syrian Arab Republic', code: 'SY'},
+    {nationality: 'Taiwan, Province of China', code: 'TW'},
+    {nationality: 'Tajikistan', code: 'TJ'},
+    {nationality: 'Tanzania, United Republic of', code: 'TZ'},
+    {nationality: 'Thailand', code: 'TH'},
+    {nationality: 'Timor-Leste', code: 'TL'},
+    {nationality: 'Togo', code: 'TG'},
+    {nationality: 'Tokelau', code: 'TK'},
+    {nationality: 'Tonga', code: 'TO'},
+    {nationality: 'Trinidad and Tobago', code: 'TT'},
+    {nationality: 'Tunisia', code: 'TN'},
+    {nationality: 'Turkey', code: 'TR'},
+    {nationality: 'Turkmenistan', code: 'TM'},
+    {nationality: 'Turks and Caicos Islands', code: 'TC'},
+    {nationality: 'Tuvalu', code: 'TV'},
+    {nationality: 'Uganda', code: 'UG'},
+    {nationality: 'Ukraine', code: 'UA'},
+    {nationality: 'United Arab Emirates', code: 'AE'},
+    {nationality: 'United Kingdom', code: 'GB'},
+    {nationality: 'United States', code: 'US'},
+    {nationality: 'United States Minor Outlying Islands', code: 'UM'},
+    {nationality: 'Uruguay', code: 'UY'},
+    {nationality: 'Uzbekistan', code: 'UZ'},
+    {nationality: 'Vanuatu', code: 'VU'},
+    {nationality: 'Venezuela', code: 'VE'},
+    {nationality: 'Vietnam', code: 'VN'},
+    {nationality: 'Virgin Islands, British', code: 'VG'},
+    {nationality: 'Virgin Islands, U.S.', code: 'VI'},
+    {nationality: 'Wallis and Futuna', code: 'WF'},
+    {nationality: 'Western Sahara', code: 'EH'},
+    {nationality: 'Yemen', code: 'YE'},
+    {nationality: 'Zambia', code: 'ZM'},
+    {nationality: 'Zimbabwe', code: 'ZW'}
   ];
 
-	
-	
+  
 })
 
 
-mymodule.controller("ctrl2", function($scope) {
-    $scope.product_ld = {
-  "@context": {
+mymodule.controller("Product_Ctrl", function($scope) {
+    $scope.product_ld = 
+  {
+   "@context": {
     "schema": "http://schema.org/"
-  },
-  "@graph": [
+   },
+   "@graph": [
     {
       "@id": "product",
       "@type": "schema:Product",
@@ -336,7 +347,7 @@ mymodule.controller("ctrl2", function($scope) {
              }
            }
            ]
-}
+   }
   
 
     $scope.product = {};
@@ -352,7 +363,7 @@ mymodule.controller("ctrl2", function($scope) {
          		}
 
 							
-				else if ($scope.product[key]== $scope.product.nationality){
+				else if ($scope.product[key]== $scope.product.name){
 				$scope.product_ld["@graph"][0]['schema:manufacturer'][key] = $scope.product[key];}
 				
 		
@@ -383,8 +394,9 @@ mymodule.controller("ctrl2", function($scope) {
 })
 
 
-mymodule.controller("ctrl3", function($scope) {
-    $scope.place_ld = {
+mymodule.controller("Place_Ctrl", function($scope) {
+    $scope.place_ld = 
+{
       "@context": {
          "schema": "http://schema.org/"
       },
@@ -400,6 +412,7 @@ mymodule.controller("ctrl3", function($scope) {
     }
 	
 	
+	
     $scope.place = {};
    
 	  function changeKeyValue() {
@@ -410,10 +423,12 @@ mymodule.controller("ctrl3", function($scope) {
 					                   
 				   delete $scope.place_ld["@graph"][0]["schema:" + key];
 				   delete $scope.place_ld["@graph"] [0]['schema:address'][key];
+		
+				   
 				   
 				   } 
 				
-				else if ($scope.place[key]== $scope.place.nationality){
+				else if ($scope.place[key]== $scope.place.name){
 				$scope.place_ld["@graph"][0]["schema:" + key] = $scope.place[key];}
 				
 				
@@ -429,11 +444,11 @@ mymodule.controller("ctrl3", function($scope) {
 				$scope.place_ld["@graph"][0]['schema:address'][key] = $scope.place[key];}
 				
 				
-				else if ($scope.place[key]== $scope.place.postalcountry_code){
+				else if ($scope.place[key]== $scope.place.postalCode){
 				$scope.place_ld["@graph"][0]['schema:address'][key] = $scope.place[key];}
 				
 				
-				else if ($scope.place[key] == $scope.place.addressCountry){
+				else if ($scope.place[key] == $scope.place.AddressCountry){
 				$scope.place_ld["@graph"][0]['schema:address'][key] = $scope.place[key];}
 				
 				
@@ -452,11 +467,7 @@ mymodule.controller("ctrl3", function($scope) {
         }
     }
 
-	
     $scope.change = function () {
         changeKeyValue();
     }
 });
-	
-
-
