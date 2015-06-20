@@ -98,6 +98,12 @@
                 <td>Image URL:</td>
                 <td><input type="url" placeholder="http://reelyactive.com/images/reelceiver.jpg" ng-model="product.image" ng-change='change()'/></td>
               </tr>
+			   <tr>
+                <td>Preset:</td>
+                <td><select ng-model="product"  ng-options="device.thing  for device in devices" ng-change='change()'>
+                    <option value="">-- Select a device --</option>
+                    </select> </td>
+              </tr>
             </table>
           </form>
         </div>
