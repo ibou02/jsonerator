@@ -27,14 +27,20 @@ mymodule.controller("Interaction_Ctrl", function($scope) {
   }
   
   $scope.devices = [
+<<<<<<< HEAD
     {
 	  thing : "Nexus5",
+=======
+       { 
+       	  thing:" Nexus5",
+>>>>>>> origin/gh-pages
 	  name : "LG Electronics", 
 	  model:"Nexus 5",
 	  url : "http://www.google.com/nexus/5/",
 	  image : "http://reelyactive.com/images/Nexus5.jpg"
 	},
 	{ 
+<<<<<<< HEAD
 	  thing : "Bluetooth Receiver",
 	  model:"RA-R436",
 	  name : "reelyActive",
@@ -43,13 +49,29 @@ mymodule.controller("Interaction_Ctrl", function($scope) {
     },	  
     { 
 	  thing : "Active RFID Tag",
+=======
+	  thing:"Bluetooth Receiver",
+	  model: "RA-R436",
+	  name: "reelyActive",
+          url: "http://shop.reelyactive.com/products/ra-r436",
+          image: "http://reelyactive.com/images/reelceiver400x400.jpg",
+        },	  
+	
+        { 
+          thing : "Active RFID Tag",
+>>>>>>> origin/gh-pages
 	  name: "reelyActive",
 	  model: "RA-T411",
 	  url: "http://shop.reelyactive.com/products/ra-t411",
 	  image: "http://reelyactive.com/images/tag400x400.jpg"
+<<<<<<< HEAD
     },			
    ]
 	  
+=======
+        },
+]
+>>>>>>> origin/gh-pages
   
   $scope.countries = [ 
     {nationality: 'Afghanistan', code: 'AF'},
