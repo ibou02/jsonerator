@@ -49,10 +49,7 @@ mymodule.controller("Interaction_Ctrl", function($scope) {
 	  url: "http://shop.reelyactive.com/products/ra-t411",
 	  image: "http://reelyactive.com/images/tag400x400.jpg"
         },
-	  
-			
 ]
-	  
   
   $scope.countries = [ 
     {nationality: 'Afghanistan', code: 'AF'},
