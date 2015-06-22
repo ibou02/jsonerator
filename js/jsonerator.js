@@ -27,7 +27,8 @@ mymodule.controller("Interaction_Ctrl", function($scope) {
   }
   
   $scope.devices = [
-    { thing:" Nexus5",
+       { 
+       	  thing:" Nexus5",
 	  name : "LG Electronics", 
 	  model:  "Nexus 5",
 	  url:  "http://www.google.com/nexus/5/",
@@ -37,17 +38,17 @@ mymodule.controller("Interaction_Ctrl", function($scope) {
 	  thing:"Bluetooth Receiver",
 	  model: "RA-R436",
 	  name: "reelyActive",
-      url: "http://shop.reelyactive.com/products/ra-r436",
-      image: "http://reelyactive.com/images/reelceiver400x400.jpg",
-    },	  
+          url: "http://shop.reelyactive.com/products/ra-r436",
+          image: "http://reelyactive.com/images/reelceiver400x400.jpg",
+        },	  
 	
-    { thing : "Active RFID Tag",
+        { 
+          thing : "Active RFID Tag",
 	  name: "reelyActive",
 	  model: "RA-T411",
 	  url: "http://shop.reelyactive.com/products/ra-t411",
 	  image: "http://reelyactive.com/images/tag400x400.jpg"
-        		
-      },
+        },
 	  
 			
 ]
