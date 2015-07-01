@@ -4,27 +4,11 @@
   */
 
 'use strict';
-var mymodule = angular.module("jsonerator", []);
+var mymodule = angular.module("jsonerator", ['ui.bootstrap']);
 
 // ----- Interaction controller -----
 mymodule.controller("Interaction_Ctrl", function($scope) {
-  $scope.show = { person: true, product: false, place: false };
-  $scope.tabclass = { person: 'selected-tab', product: 'tab', place: 'tab' };
-
-  $scope.selectPerson = function() {
-    $scope.show = { person: true, product: false, place: false };
-    $scope.tabclass = { person: 'selected-tab', product: 'tab', place: 'tab' };
-  }
-
-  $scope.selectProduct = function() {
-    $scope.show = { person: false, product: true, place: false };
-    $scope.tabclass = { person: 'tab', product: 'selected-tab', place: 'tab' };
-  }
-
-  $scope.selectPlace = function() {
-    $scope.show = { person: false, product: false, place: true };
-    $scope.tabclass = { person: 'tab', product: 'tab', place: 'selected-tab' };
-  }
+  
   
   $scope.devices = [
     {
