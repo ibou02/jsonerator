@@ -8,34 +8,8 @@ var mymodule = angular.module("jsonerator", ['ui.bootstrap']);
 
 // ----- Interaction controller -----
 mymodule.controller("Interaction_Ctrl", function($scope) {
-  
-  
-  $scope.devices = [
-    {
-	  thing : "Nexus5",
-	  name : "LG Electronics", 
-	  model:"Nexus 5",
-	  url : "http://www.google.com/nexus/5/",
-	  image : "http://reelyactive.com/images/Nexus5.jpg"
-	},
-	{ 
-	  thing : "Bluetooth Receiver",
-	  model:"RA-R436",
-	  name : "reelyActive",
-      url : "http://shop.reelyactive.com/products/ra-r436",
-      image : "http://reelyactive.com/images/reelceiver400x400.jpg",
-    },	  
-    { 
-	  thing : "Active RFID Tag",
-	  name: "reelyActive",
-	  model: "RA-T411",
-	  url: "http://shop.reelyactive.com/products/ra-t411",
-	  image: "http://reelyactive.com/images/tag400x400.jpg"
-    },			
-   ]
-	  
-  
-  $scope.countries = [ 
+
+     $scope.countries = [ 
     {nationality: 'Afghanistan', code: 'AF'},
     {nationality: 'Aland Islands', code: 'AX'},
     {nationality: 'Albania', code: 'AL'},
@@ -280,6 +254,33 @@ mymodule.controller("Interaction_Ctrl", function($scope) {
     {nationality: 'Zambia', code: 'ZM'},
     {nationality: 'Zimbabwe', code: 'ZW'}
   ];
+  
+  
+  $scope.devices = [
+    {
+	  thing : "Nexus5",
+	  name : "LG Electronics", 
+	  model:"Nexus 5",
+	  url : "http://www.google.com/nexus/5/",
+	  image : "http://reelyactive.com/images/Nexus5.jpg"
+	},
+	{ 
+	  thing : "Bluetooth Receiver",
+	  model:"RA-R436",
+	  name : "reelyActive",
+      url : "http://shop.reelyactive.com/products/ra-r436",
+      image : "http://reelyactive.com/images/reelceiver400x400.jpg",
+    },	  
+    { 
+	  thing : "Active RFID Tag",
+	  name: "reelyActive",
+	  model: "RA-T411",
+	  url: "http://shop.reelyactive.com/products/ra-t411",
+	  image: "http://reelyactive.com/images/tag400x400.jpg"
+    },			
+   ]
+	  
+  
   
 });
 
