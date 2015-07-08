@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
   <head>
     <title>
@@ -6,20 +6,18 @@
     </title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.css"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2-bootstrap.css"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.0/select2.css"></script>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jsonerator.js"></script>   
-    
+    <script type="text/javascript" src="js/jsonerator.js"></script>  
+    <link rel="stylesheet" href="style/main.css" /> 
     </head>
     <body ng-app="jsonerator">
+    <header>reelyActive JSONerator</header>
       <div ng-controller="Interaction_Ctrl"> 
 
         <tabset justified="true">
         <tab heading="Person">
         <div ng-controller="Person_Ctrl" >
-        <div class="form">
+        <div class="form1">
           <h1>Enter the fields below...</h1>
           <form role="form">
             <table>
@@ -34,15 +32,15 @@
               <tr>
                 <td>Gender:</td>
                 <td class="btn-group">
-                  <label  ng-model="person.gender" ng-change='change()' btn-radio="'Male'" uncheckable class="btn btn-success"/> Male </label>
-                  <label  ng-model="person.gender" ng-change='change()'  btn-radio="'Female'" uncheckable class="btn btn-success"/> Female </label>
+                  <label  ng-model="person.gender" ng-change='change()' btn-radio="'Male'" uncheckable class="btn btn-default"/> Male </label>
+                  <label  ng-model="person.gender" ng-change='change()'  btn-radio="'Female'" uncheckable class="btn btn-default"/> Female </label>
                 </td>
                 </tr> 
                 <tr>
                   <td>Nationality:</td>
                   <td>
-                    <select  ng-model="person.nationality" class="form-control" ng-change='change()' >
-                    <option value="{{pays.code}}" data-ng-repeat=" pays in countries">{{pays.nationality}}</option>
+                    <select  ng-model="person.nationality"  ng-options="pays.code as pays.nationality for pays in countries" ng-change='change()' class="form-control" >
+                    <option value="">-- Select a Country --</option>
                     </select>
                   </td>
                 </tr>
@@ -65,16 +63,16 @@
               </table>
             </form>
           </div>
-          <div class="json" >
+          <div class="json1" >
             <h1>...and your JSON shall appear</h1>
             <pre>{{person_ld | json}}</pre>
           </div>
         </div>
         </tab>
 
-      <tab heading="product">
+      <tab heading="Product">
       <div ng-controller="Product_Ctrl" >
-        <div class="form">
+        <div class="form2">
           <h1>Enter the fields below...</h1>
           <form>
             <table>
@@ -100,16 +98,14 @@
               </tr>
 			        <tr>
                 <td>Preset:</td>
-                <td>
-                  <select  ng-model="product" class="form-control" ng-change='change()' >
-                  <option value="{{device}}" data-ng-repeat=" device in devices">{{device.thing}}</option>
-                  </select> 
-                </td>
+                <td><select ng-model="product"  ng-options="device.thing  for device in devices" ng-change='change()' class="form-control">
+                    <option value="">-- Select a device --</option>
+                    </select> </td>
               </tr>
             </table>
           </form>
         </div>
-        <div class="json">
+        <div class="json2">
           <h1>...and your JSON shall appear</h1>
           <pre>{{product_ld | json}}</pre>
         </div>
@@ -118,7 +114,7 @@
 
        <tab heading="Place">
       <div ng-controller="Place_Ctrl" >
-        <div class="form">
+        <div class="form3">
           <h1>Enter the fields below...</h1>
           <form>
             <table>
@@ -145,9 +141,8 @@
               <tr>
                 <td>Country:</td>
                 <td>
-                   <select  ng-model="place.addressCountry" class="form-control" ng-change='change()' >
-                    <option value="{{pays.code}}" data-ng-repeat=" pays in countries">{{pays.nationality}}</option>
-                    </select>
+                  <select ng-model="place.addressCountry" ng-options=" country.code as country.nationality for country in countries" ng-change='change()' class="form-control">
+                    <option value="">-- Select a Country --</option>
                   </select>
                 </td>
               </tr>
@@ -167,7 +162,7 @@
           </form>
          
         </div>
-        <div class="json">
+        <div class="json3">
           <h1>...and your JSON shall appear</h1>
           <pre>{{place_ld | json}}</pre>
         </div>
@@ -175,5 +170,10 @@
       </div>
       </tabset>
     </div>
+    <footer id="footer">
+<a href="https://github.com/reelyactive/advlib"> jsonerator </a> &nbsp; | &nbsp;
+<a href="http://context.reelyactive.com"> &copy; reelyActive 2015 </a>
+</footer>
   </body>
+
 </html>
