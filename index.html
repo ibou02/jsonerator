@@ -7,6 +7,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/jsonerator.js"></script>  
     <link rel="stylesheet" href="style/main.css" /> 
     </head>
@@ -96,7 +97,7 @@
                 <td>Image URL:</td>
                 <td><input type="url" placeholder="http://reelyactive.com/images/reelceiver.jpg" ng-model="product.image" ng-change='change()' t class="form-control" /></td>
               </tr>
-			        <tr>
+              <tr>
                 <td>Preset:</td>
                 <td><select ng-model="product"  ng-options="device.thing  for device in devices" ng-change='change()' class="form-control">
                     <option value="">-- Select a device --</option>
