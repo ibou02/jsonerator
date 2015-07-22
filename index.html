@@ -13,6 +13,7 @@
     </head>
     <body ng-app="jsonerator">
     <header>reelyActive JSONerator</header>
+
       <div ng-controller="Interaction_Ctrl"> 
 
         <tabset justified="true">
@@ -24,7 +25,7 @@
             <table>
               <tr>
                 <td>Given Name:</td>
-                <td><input type="text" placeholder="Barn" ng-model="person.givenName" ng-change='change()' tooltip="Ex:Barn" class="form-control" tooltip-placement="right"/></td>
+                <td><input type="text" placeholder="Barn" ng-model="person.givenName" ng-change='change()' tooltip="Ex:Barn" class="form-control" tooltip-placement="right" /></td>
               </tr>
               <tr>
                 <td>Family Name:</td>
@@ -57,10 +58,23 @@
                   <td>Personal URL:</td>
                   <td><input type="url" placeholder="https://www.npmjs.com/package/barnowl" ng-model="person.url" ng-change='change()'  class="form-control" /></td>
                 </tr>
-                <tr>
+                 <tr>
                   <td>Image URL:</td>
-                  <td><input type="url" placeholder="http://reelyactive.com/images/barnowl.jpg" ng-model="person.image" ng-change='change()'  class="form-control" /></td>
+                  <td><input type="url" placeholder="https://www.npmjs.com/package/barnowl" ng-model="person.image" ng-change='change()'  class="form-control" /></td>
                 </tr>
+                <tr>
+                <td>
+                <carousel >
+                <slide ng-repeat="slide  in slides" active="slide.active">
+                <img ng-src="{{slide.image}}"  style="height:100px; margin:auto"  ng-model="person.image" ng-change='change()'>
+                <div class="carousel-caption">
+                <h4>Slide {{$index}}</h4>
+                <p>{{slide.text}}</p>
+                </slide>
+                </carousel>
+                </td>
+                </tr>
+
               </table>
             </form>
           </div>
@@ -68,6 +82,7 @@
             <h1>...and your JSON shall appear</h1>
             <pre>{{person_ld | json}}</pre>
           </div>
+
         </div>
         </tab>
 

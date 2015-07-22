@@ -280,7 +280,14 @@ mymodule.controller("Interaction_Ctrl", function($scope) {
     {nationality: 'Zambia', code: 'ZM'},
     {nationality: 'Zimbabwe', code: 'ZW'}
   ];
-  
+
+   $scope.slides = [];
+  $scope.slides.push({text: 'barnowl', image:'http://reelyactive.com/images/barnowl.jpg' });
+  $scope.slides.push({text: 'barnacles',image:'http://reelyactive.com/images/barnacles.jpg'});
+  $scope.slides.push({text: 'barterer',image:'http://reelyactive.com/images/barterer.jpg'});
+  $scope.slides.push({text: 'chickadee', image:'http://reelyactive.com/images/chickadee.jpg'});
+  $scope.slides.push({text: 'starling', image:'http://reelyactive.com/images/starling.jpg'  });
+
 });
 
 
