@@ -65,12 +65,9 @@
                 <tr>
                 <td>
                 <carousel >
-                <slide ng-repeat="slide  in slides" active="slide.active">
-                <input type="url"  ng-model="slide.image" ng-change='change()'/>
-                <img ng-src="{{slide.image}}"  style="height:100px; margin:auto"  >
-                <div class="carousel-caption">
-                <h4>Slide {{$index}}</h4>
-                <p>{{slide.text}}</p>
+                <slide ng-repeat="person  in slides" active="slide.active">
+                <input type="url"  ng-model="person.image" ng-change='change()'/>
+                <img ng-src="{{person.image}}"  style="height:100px; margin:auto">
                 </slide>
                 </carousel>
                 </td>
