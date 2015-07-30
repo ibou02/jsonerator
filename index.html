@@ -64,9 +64,12 @@
                 </tr>
                 <tr>
                 <td>
+                Image URL preset:
+                </td>
+                <td>
                 <carousel >
-                <slide ng-repeat="person  in slides" active="slide.active">
-                <input type="url"  ng-model="person.image" ng-change='change()'/>
+                <slide ng-repeat="person in slides" >
+                <input type="url"  ng-model="person.image" ng-change='change()' style="width:352px"  class="form-control" />
                 <img ng-src="{{person.image}}"  style="height:100px; margin:auto">
                 </slide>
                 </carousel>
@@ -105,17 +108,30 @@
               <tr>
                 <td>Logo URL:</td>
                 <td><input type="url" placeholder="http://reelyactive.com/images/reelyActiveLogo.png" ng-model="product.logo" ng-change='change()'  class="form-control" /></td>
-              </tr>
-              <tr>
+                </tr>
+                <tr>
                 <td>Image URL:</td>
                 <td><input type="url" placeholder="http://reelyactive.com/images/reelceiver.jpg" ng-model="product.image" ng-change='change()' t class="form-control" /></td>
-              </tr>
-              <tr>
+                </tr>
+                <tr>
                 <td>Preset:</td>
-                <td><select ng-model="product"  ng-options="device.thing  for device in devices" ng-change='change()' class="form-control">
+                <td> <select ng-model="product"  ng-options="device.thing  for device in devices" ng-change='change()'      class="form-control">
                     <option value="">-- Select a device --</option>
                     </select> </td>
-              </tr>
+                </tr>
+                <tr>
+                <td>
+                Image URL preset:
+                </td>
+                <td>
+                <carousel >
+                <slide ng-repeat="product in slides" >
+                <input type="url"  ng-model="product.image" ng-change='change()' style="width:352px"  class="form-control"/>
+                <img ng-src="{{product.image}}"  style="height:100px; margin:auto">
+                </slide>
+                </carousel>
+                </td>
+                </tr>
             </table>
           </form>
         </div>
@@ -170,8 +186,21 @@
               </tr>
               <tr>
                 <td>Image URL:</td>
-                <td><input type="url" placeholder="http://reelyactive.com/images/NotmanHouse.png" ng-model="place.image" ng-change='change()'  class="form-control" /><br/></td>
-              </tr>
+                <td><input type="url" placeholder="http://reelyactive.com/images/NotmanHouse.png" ng-model="place.image" ng-change='change()'  class="form-control" /></td>
+                </tr>
+                <tr>
+                <td>
+                Image URL preset:
+                </td>
+                <td>
+                <carousel >
+                <slide ng-repeat="place in slides" >
+                <input type="url"  ng-model="place.image" ng-change='change()' style="width:352px"  class="form-control"/>
+                <img ng-src="{{place.image}}"  style="height:100px; margin:auto">
+                </slide>
+                </carousel>
+                </td>
+                </tr>
             </table>
           </form>
          

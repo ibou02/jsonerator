@@ -342,11 +342,11 @@ mymodule.controller("Product_Ctrl", function($scope) {
       ]
     };
   $scope.product = {};
-   
+
   function changeKeyValue() {
     for(var key in $scope.product) {
       if ($scope.product.hasOwnProperty(key)) {
-        if(!$scope.product[key].length) {                     
+        if(!$scope.product[key].length) {
           delete $scope.product_ld["@graph"][0]["schema:" + key];
           delete $scope.product_ld["@graph"][0]["schema:manufacturer"][key];
         }
@@ -367,7 +367,7 @@ mymodule.controller("Product_Ctrl", function($scope) {
         }
       }
     }
-  } 
+  }
 
   $scope.change = function () {
     changeKeyValue();
