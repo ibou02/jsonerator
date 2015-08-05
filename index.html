@@ -6,8 +6,8 @@
     </title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <script type="text/javascript" src="js/jsonerator.js"></script>  
     <link rel="stylesheet" href="style/main.css" /> 
     </head>
@@ -16,7 +16,7 @@
 
       <div ng-controller="Interaction_Ctrl"> 
 
-        <tabset justified="true">
+        <tabset justified="true" >
         <tab heading="Person">
         <div ng-controller="Person_Ctrl" >
         <div class="form1">
@@ -58,24 +58,25 @@
                   <td>Personal URL:</td>
                   <td><input type="url" placeholder="https://www.npmjs.com/package/barnowl" ng-model="person.url" ng-change='change()'  class="form-control" /></td>
                 </tr>
-                 <tr>
-                  <td>Image URL:</td>
-                  <td><input type="url" placeholder="https://www.npmjs.com/package/barnowl" ng-model="person.image" ng-change='change()'  class="form-control" /></td>
-                </tr>
                 <tr>
-                <td>
-                Image URL preset:
-                </td>
+                <td>Image URL:</td>
                 <td>
                 <carousel >
-                <slide ng-repeat="person in slides" >
-                <input type="url"  ng-model="person.image" ng-change='change()' style="width:352px"  class="form-control" />
+                <slide ng-repeat="person in slides" active="person.active" >
                 <img ng-src="{{person.image}}"  style="height:100px; margin:auto">
                 </slide>
                 </carousel>
                 </td>
                 </tr>
-
+                <tr>
+                <td>
+                <span></span>
+                </td>
+                <td class="text-center" >
+                <input type="url" placeholder="Paste the image URL here,or..." ng-model="person.image" ng-change='change()'  class="form-control" />
+                <button type="button" class="btn btn-default"  ng-click="getActiveSlide();change()">Use image above</button>
+                </td>
+                </tr>
               </table>
             </form>
           </div>
@@ -110,14 +111,12 @@
                 <td><input type="url" placeholder="http://reelyactive.com/images/reelyActiveLogo.png" ng-model="product.logo" ng-change='change()'  class="form-control" /></td>
                 </tr>
                 <tr>
-                <td>Image URL:</td>
-                <td><input type="url" placeholder="http://reelyactive.com/images/reelceiver.jpg" ng-model="product.image" ng-change='change()' t class="form-control" /></td>
-                </tr>
-                <tr>
                 <td>Preset:</td>
-                <td> <select ng-model="product"  ng-options="device.thing  for device in devices" ng-change='change()'      class="form-control">
-                    <option value="">-- Select a device --</option>
-                    </select> </td>
+                <td> 
+                <select ng-model="product"  ng-options="device.thing  for device in devices" ng-change='change()' class="form-control">
+                <option value="">-- Select a device --</option>
+                </select> 
+                </td>
                 </tr>
                 <tr>
                 <td>
@@ -125,11 +124,19 @@
                 </td>
                 <td>
                 <carousel >
-                <slide ng-repeat="product in slides" >
-                <input type="url"  ng-model="product.image" ng-change='change()' style="width:352px"  class="form-control"/>
+                <slide ng-repeat="product in slides" active="product.active">
                 <img ng-src="{{product.image}}"  style="height:100px; margin:auto">
                 </slide>
                 </carousel>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <span></span>
+                </td>
+                <td class="text-center" >
+                <input type="url" placeholder="Paste the image URL here,or..." size="33px" ng-model="product.image" ng-change='change()'  class="form-control" />
+                <button type="button" class="btn btn-default"  ng-click="Slide();change()">Use image above</button>
                 </td>
                 </tr>
             </table>
@@ -184,21 +191,25 @@
                 <td>Logo URL:</td>
                 <td><input type="url" placeholder="http://reelyactive.com/images/notman-logo.png" ng-model="place.logo" ng-change='change()'  class="form-control" /></td>
               </tr>
-              <tr>
-                <td>Image URL:</td>
-                <td><input type="url" placeholder="http://reelyactive.com/images/NotmanHouse.png" ng-model="place.image" ng-change='change()'  class="form-control" /></td>
-                </tr>
                 <tr>
                 <td>
-                Image URL preset:
+                Image URL:
                 </td>
                 <td>
                 <carousel >
-                <slide ng-repeat="place in slides" >
-                <input type="url"  ng-model="place.image" ng-change='change()' style="width:352px"  class="form-control"/>
+                <slide ng-repeat="place in slides" active="place.active">
                 <img ng-src="{{place.image}}"  style="height:100px; margin:auto">
                 </slide>
                 </carousel>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <span></span>
+                </td>
+                <td class="text-center" >
+                <input type="url" placeholder="Paste the URL here,or..." size="33px" ng-model="place.image" ng-change='change()'  class="form-control" />
+                <button type="button" class="btn btn-default"  ng-click="getActiveSlide();change()"> Use image above</button>
                 </td>
                 </tr>
             </table>

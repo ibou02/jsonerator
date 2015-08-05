@@ -288,6 +288,8 @@ mymodule.controller("Interaction_Ctrl", function($scope) {
   $scope.slides.push({text: 'chickadee', image:'http://reelyactive.com/images/chickadee.jpg'});
   $scope.slides.push({text: 'starling', image:'http://reelyactive.com/images/starling.jpg'  });
 
+
+
 });
 
 
@@ -322,6 +324,14 @@ mymodule.controller("Person_Ctrl", function($scope) {
   $scope.change = function() {
     changeKeyValue();
   }
+
+   function isActive(slide) {
+  return slide.active;
+};
+$scope.getActiveSlide = function() {
+  var activeSlides = $scope.slides.filter(isActive)[0]; 
+  $scope.person.image = activeSlides.image;
+};
 });
 
 
@@ -372,6 +382,16 @@ mymodule.controller("Product_Ctrl", function($scope) {
   $scope.change = function () {
     changeKeyValue();
   }
+
+
+   function Active(slide) {
+  return slide.active;
+};
+  $scope.Slide = function() {
+  var activeSlide = $scope.slides.filter(Active)[0]; 
+  $scope.product.image = activeSlide.image;
+
+}
 
 });
 
@@ -436,4 +456,13 @@ mymodule.controller("Place_Ctrl", function($scope) {
     changeKeyValue();
   }
 
+
+   function isActive(slide) {
+  return slide.active;
+};
+$scope.getActiveSlide = function() {
+  var activeSlide = $scope.slides.filter(isActive)[0]; 
+  $scope.place.image = activeSlide.image;
+
+}
 });
