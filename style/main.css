@@ -8,35 +8,7 @@ font-size: 33px;
 background-color: none;
 height: 50px;
 }
-.form1{
-	float: left;
-	margin:0px 6% 56px;
-}
-.form2{
-	float: left;
-	margin:0px 7% 113px;
-}
-.form3{
-	float: left;
-	margin:0px 6% 56px;
-}
-.json1{
-  float:right;
-  width:50%;
-  min-width:480px;
-  margin:-520px 1% ;
-}
-.json2{
-  float:right;
-  width:50%;
-  min-width:480px;
-  margin:-514px 5% ;
-}.json3{
-  float:left;
-  width:50%;
-  min-width:480px;
-  margin:-531px 48% ;
-}
+
 #footer {
   clear:both;
   position:relative;
